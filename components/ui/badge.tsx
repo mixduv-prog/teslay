@@ -1,0 +1,25 @@
+import { HTMLAttributes } from "react";
+
+type BadgeVariant = "default" | "green" | "yellow" | "red";
+
+interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+  variant?: BadgeVariant;
+}
+
+const variantStyles: Record<BadgeVariant, string> = {
+  default: "bg-neutral-100 text-neutral-700",
+  green: "bg-green-100 text-green-700",
+  yellow: "bg-yellow-100 text-yellow-700",
+  red: "bg-red-100 text-red-700",
+};
+
+export function Badge({ variant = "default", className = "", children, ...props }: BadgeProps) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${variantStyles[variant]} ${className}`}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+}

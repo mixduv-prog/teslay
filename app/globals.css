@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #fafaf8;
+  --color-foreground: #1a1a1a;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+}
+
+body {
+  background-color: #fafaf8;
+  color: #1a1a1a;
+  font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+}
