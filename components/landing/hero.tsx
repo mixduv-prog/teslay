@@ -15,9 +15,6 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center rounded-full border border-green-200 bg-green-50 px-4 py-1.5 text-sm text-green-700">
-          Propulsé par Claude AI
-        </div>
         <h1 className="font-serif text-5xl font-normal leading-tight tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
           Des briefs SEO parfaits
           <br />
