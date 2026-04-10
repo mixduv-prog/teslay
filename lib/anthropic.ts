@@ -1,8 +1,10 @@
 import Anthropic from "@anthropic-ai/sdk";
 
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+function getClient(): Anthropic {
+  return new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY!,
+  });
+}
 
 const SYSTEM_PROMPT = `Tu es un expert SEO senior avec 15 ans d'expérience. Tu génères des briefs éditoriaux SEO complets, actionnables et prêts à utiliser par un rédacteur.
 
@@ -66,7 +68,7 @@ ${params.notes ? `**Notes additionnelles** : ${params.notes}` : ""}
 
 Produis un brief complet, structuré et directement actionnable.`;
 
-  const response = await client.messages.create({
+  const response = await getClient().messages.create({
     model: "claude-sonnet-4-6-20250514",
     max_tokens: 4096,
     system: [
