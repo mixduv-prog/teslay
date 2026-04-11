@@ -11,12 +11,12 @@ const faqs = [
   {
     question: "Comment fonctionne la génération de briefs ?",
     answer:
-      "BriefCraft utilise l'API Claude d'Anthropic pour analyser votre mot-clé et générer un brief complet. Notre système est pré-configuré avec l'expertise d'un consultant SEO senior : il analyse l'intention de recherche, identifie les mots-clés sémantiques, structure le contenu et produit des recommandations techniques actionnables.",
+      "Breefy utilise l'API Claude d'Anthropic pour analyser votre mot-clé et générer un brief complet. Notre système est pré-configuré avec l'expertise d'un consultant SEO senior : il analyse l'intention de recherche, identifie les mots-clés sémantiques, structure le contenu et produit des recommandations techniques actionnables.",
   },
   {
-    question: "Puis-je utiliser BriefCraft pour du contenu multilingue ?",
+    question: "Puis-je utiliser Breefy pour du contenu multilingue ?",
     answer:
-      "Oui ! BriefCraft supporte la génération de briefs en français, anglais, espagnol, allemand, italien et portugais. Le brief sera entièrement rédigé dans la langue choisie, avec des recommandations SEO adaptées au marché local.",
+      "Oui ! Breefy supporte la génération de briefs en français, anglais, espagnol, allemand, italien et portugais. Le brief sera entièrement rédigé dans la langue choisie, avec des recommandations SEO adaptées au marché local.",
   },
   {
     question: "Que se passe-t-il quand j'utilise mes 3 briefs gratuits ?",

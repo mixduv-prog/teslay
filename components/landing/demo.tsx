@@ -52,7 +52,7 @@ export function Demo() {
             Essayez par vous-même
           </h2>
           <p className="mt-4 text-lg text-neutral-500">
-            Entrez un mot-clé et découvrez à quoi ressemble un brief BriefCraft.
+            Entrez un mot-clé et découvrez à quoi ressemble un brief Breefy.
           </p>
         </div>
 

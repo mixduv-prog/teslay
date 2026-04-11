@@ -45,7 +45,7 @@ Une liste de 8-10 points de vérification avant mise en ligne : mots-clés, bali
 
 Créer un brief SEO manuellement prend entre 1h et 3h par article. Multiplié par une production hebdomadaire, c'est un goulot d'étranglement majeur pour les équipes content.
 
-BriefCraft génère un brief complet en 30 secondes, avec la même qualité qu'un consultant SEO senior. Vous libérez un temps précieux pour vous concentrer sur la stratégie, le suivi des performances et l'optimisation.
+Breefy génère un brief complet en 30 secondes, avec la même qualité qu'un consultant SEO senior. Vous libérez un temps précieux pour vous concentrer sur la stratégie, le suivi des performances et l'optimisation.
 
 ## Conclusion
 
@@ -90,7 +90,7 @@ Les questions "People Also Ask" sont une mine d'or SEO. Les intégrer dans votre
 
 ## Conclusion
 
-Ces 5 erreurs sont frustrantes parce qu'elles sont faciles à corriger. Un bon brief prend du temps à produire manuellement — c'est pour ça que BriefCraft existe. En 30 secondes, vous obtenez un brief qui évite tous ces pièges.`,
+Ces 5 erreurs sont frustrantes parce qu'elles sont faciles à corriger. Un bon brief prend du temps à produire manuellement — c'est pour ça que Breefy existe. En 30 secondes, vous obtenez un brief qui évite tous ces pièges.`,
   },
   {
     slug: "comment-positionner-mots-cles-concurrentiels",
@@ -135,7 +135,7 @@ Un bon brief fait la différence. Il garantit que votre article :
 - Respecte la structure attendue par Google
 - A des meta tags optimisés
 
-C'est là que BriefCraft entre en jeu : un brief parfait, en 30 secondes, sans arbitrage manuel.
+C'est là que Breefy entre en jeu : un brief parfait, en 30 secondes, sans arbitrage manuel.
 
 ## Conclusion
 
@@ -174,7 +174,7 @@ L'IA permet de produire rapidement des variations d'un même contenu pour diffé
 
 ## Conclusion
 
-L'IA est un outil puissant, mais ce n'est qu'un outil. En 2026, les gagnants sont ceux qui combinent productivité IA et expertise humaine. BriefCraft s'inscrit dans cette logique : l'IA fait le travail préparatoire, vous faites le travail éditorial.`,
+L'IA est un outil puissant, mais ce n'est qu'un outil. En 2026, les gagnants sont ceux qui combinent productivité IA et expertise humaine. Breefy s'inscrit dans cette logique : l'IA fait le travail préparatoire, vous faites le travail éditorial.`,
   },
   {
     slug: "checklist-seo-avant-publication",
@@ -214,7 +214,7 @@ Voici les 15 points à vérifier avant toute publication.
 
 ## Automatiser la checklist
 
-BriefCraft génère cette checklist automatiquement à la fin de chaque brief, adaptée au mot-clé et à l'intention. Plus besoin de la recréer manuellement à chaque article.
+Breefy génère cette checklist automatiquement à la fin de chaque brief, adaptée au mot-clé et à l'intention. Plus besoin de la recréer manuellement à chaque article.
 
 ## Conclusion
 

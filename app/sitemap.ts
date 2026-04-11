@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXTAUTH_URL || "https://briefcraft.app";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://getbreefy.com";
 
   return [
     {

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conditions générales d'utilisation — BriefCraft",
-  description: "Conditions générales d'utilisation du service BriefCraft.",
+  title: "Conditions générales d'utilisation — Breefy",
+  description: "Conditions générales d'utilisation du service Breefy.",
 };
 
 export default function TermsPage() {
@@ -14,13 +14,13 @@ export default function TermsPage() {
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">1. Objet</h2>
       <p className="text-neutral-700 leading-relaxed">
         Les présentes conditions générales d&apos;utilisation (ci-après « CGU ») régissent l&apos;utilisation
-        du service BriefCraft, un générateur de briefs SEO propulsé par intelligence artificielle.
+        du service Breefy, un générateur de briefs SEO propulsé par intelligence artificielle.
         En accédant au service, l&apos;utilisateur accepte sans réserve les présentes CGU.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">2. Services proposés</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft permet de générer automatiquement des briefs éditoriaux SEO à partir d&apos;un mot-clé
+        Breefy permet de générer automatiquement des briefs éditoriaux SEO à partir d&apos;un mot-clé
         et de paramètres définis par l&apos;utilisateur. Le service inclut plusieurs formules :
       </p>
       <ul className="text-neutral-700 leading-relaxed list-disc pl-6 mt-4">
@@ -53,47 +53,47 @@ export default function TermsPage() {
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">6. Propriété intellectuelle</h2>
       <p className="text-neutral-700 leading-relaxed">
-        Les briefs générés appartiennent à l&apos;utilisateur qui les a créés. BriefCraft conserve
+        Les briefs générés appartiennent à l&apos;utilisateur qui les a créés. Breefy conserve
         les droits sur la plateforme, le code source et le design. Toute reproduction du service
         est interdite sans autorisation écrite.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">7. Utilisation de l&apos;IA</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft utilise l&apos;API Claude d&apos;Anthropic pour générer les briefs. Les contenus
+        Breefy utilise l&apos;API Claude d&apos;Anthropic pour générer les briefs. Les contenus
         produits sont générés automatiquement et peuvent contenir des erreurs ou des imprécisions.
-        L&apos;utilisateur est invité à vérifier chaque brief avant utilisation. BriefCraft ne peut
+        L&apos;utilisateur est invité à vérifier chaque brief avant utilisation. Breefy ne peut
         être tenu responsable de l&apos;exactitude des informations générées.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">8. Limitation de responsabilité</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft ne saurait être tenu responsable des dommages directs ou indirects résultant de
+        Breefy ne saurait être tenu responsable des dommages directs ou indirects résultant de
         l&apos;utilisation du service, notamment en cas de perte de données, d&apos;interruption de
         service ou d&apos;erreurs dans les briefs générés.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">9. Résiliation</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft se réserve le droit de résilier tout compte en cas de non-respect des présentes
+        Breefy se réserve le droit de résilier tout compte en cas de non-respect des présentes
         CGU, d&apos;utilisation abusive du service ou de comportement frauduleux.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">10. Modification des CGU</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft peut modifier les présentes CGU à tout moment. Les utilisateurs seront informés
+        Breefy peut modifier les présentes CGU à tout moment. Les utilisateurs seront informés
         par email de tout changement important.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">11. Droit applicable</h2>
       <p className="text-neutral-700 leading-relaxed">
         Les présentes CGU sont régies par le droit français. Tout litige sera soumis aux tribunaux
-        compétents du ressort du siège social de BriefCraft.
+        compétents du ressort du siège social de Breefy.
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">12. Contact</h2>
       <p className="text-neutral-700 leading-relaxed">
-        Pour toute question relative aux CGU, contactez-nous à : <strong>contact@briefcraft.app</strong>
+        Pour toute question relative aux CGU, contactez-nous à : <strong>contact@getbreefy.com</strong>
       </p>
     </>
   );

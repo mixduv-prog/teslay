@@ -11,7 +11,7 @@ const getPlans = (period: Period) => [
     name: "Free",
     price: "0",
     period: "",
-    description: "Pour découvrir BriefCraft",
+    description: "Pour découvrir Breefy",
     features: ["3 briefs SEO gratuits", "Structure complète", "Export texte", "Historique illimité"],
     cta: "Commencer gratuitement",
     href: "/register",

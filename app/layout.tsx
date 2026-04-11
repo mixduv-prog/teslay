@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXTAUTH_URL || "https://briefcraft.app";
+const siteUrl = process.env.NEXTAUTH_URL || "https://getbreefy.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "BriefCraft — Générateur de briefs SEO par IA",
-    template: "%s | BriefCraft",
+    default: "Breefy — Générateur de briefs SEO par IA",
+    template: "%s | Breefy",
   },
   description:
     "Générez des briefs éditoriaux SEO complets, structurés et actionnables en 30 secondes grâce à l'IA Claude. Mots-clés, structure Hn, meta tags, checklist : tout est inclus.",
@@ -21,21 +21,21 @@ export const metadata: Metadata = {
     "content marketing",
     "rédaction SEO",
   ],
-  authors: [{ name: "BriefCraft" }],
-  creator: "BriefCraft",
-  publisher: "BriefCraft",
+  authors: [{ name: "Breefy" }],
+  creator: "Breefy",
+  publisher: "Breefy",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: siteUrl,
-    title: "BriefCraft — Générateur de briefs SEO par IA",
+    title: "Breefy — Générateur de briefs SEO par IA",
     description:
       "Des briefs SEO parfaits en 30 secondes. Structure Hn, mots-clés, meta tags et checklist inclus.",
-    siteName: "BriefCraft",
+    siteName: "Breefy",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BriefCraft — Générateur de briefs SEO par IA",
+    title: "Breefy — Générateur de briefs SEO par IA",
     description:
       "Des briefs SEO parfaits en 30 secondes. Structure Hn, mots-clés, meta tags et checklist inclus.",
   },

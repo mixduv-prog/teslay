@@ -9,7 +9,7 @@ export function Navbar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500 text-white font-serif font-bold text-sm">
             B
           </div>
-          <span className="font-serif text-lg text-neutral-900">BriefCraft</span>
+          <span className="font-serif text-lg text-neutral-900">Breefy</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm text-neutral-600 md:flex">
           <Link href="#features" className="hover:text-neutral-900 transition-colors">

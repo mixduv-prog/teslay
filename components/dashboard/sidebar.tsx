@@ -53,7 +53,7 @@ export function Sidebar() {
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500 text-white font-serif font-bold text-sm">
           B
         </div>
-        <span className="font-serif text-lg text-neutral-900">BriefCraft</span>
+        <span className="font-serif text-lg text-neutral-900">Breefy</span>
       </div>
       <nav className="flex-1 space-y-1 p-4">
         {navItems.map((item) => {

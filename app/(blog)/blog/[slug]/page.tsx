@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Article introuvable" };
 
   return {
-    title: `${post.title} — BriefCraft`,
+    title: `${post.title} — Breefy`,
     description: post.excerpt,
     openGraph: {
       title: post.title,

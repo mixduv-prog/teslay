@@ -1,6 +1,6 @@
-# BriefCraft — Générateur de briefs SEO par IA
+# Breefy — Générateur de briefs SEO par IA
 
-BriefCraft est un SaaS qui génère des briefs éditoriaux SEO complets, structurés et actionnables en quelques secondes grâce à l'API Claude d'Anthropic.
+Breefy est un SaaS qui génère des briefs éditoriaux SEO complets, structurés et actionnables en quelques secondes grâce à l'API Claude d'Anthropic.
 
 ## Stack technique
 
@@ -18,7 +18,7 @@ BriefCraft est un SaaS qui génère des briefs éditoriaux SEO complets, structu
 
 ```bash
 git clone <repo-url>
-cd briefcraft
+cd breefy
 npm install
 ```
 

@@ -10,7 +10,7 @@ export function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500 text-white font-serif font-bold text-sm">
                 B
               </div>
-              <span className="font-serif text-lg text-neutral-900">BriefCraft</span>
+              <span className="font-serif text-lg text-neutral-900">Breefy</span>
             </div>
             <p className="mt-4 text-sm text-neutral-500">
               Générateur de briefs SEO par IA. Des briefs parfaits en 30 secondes.
@@ -88,7 +88,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-100 pt-8 sm:flex-row">
           <p className="text-sm text-neutral-400">
-            &copy; {new Date().getFullYear()} BriefCraft. Tous droits réservés.
+            &copy; {new Date().getFullYear()} Breefy. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4 text-xs text-neutral-400">
             <span className="flex items-center gap-1.5">

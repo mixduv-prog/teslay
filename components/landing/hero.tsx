@@ -21,7 +21,7 @@ export function Hero() {
           <span className="text-green-500">en 30 secondes</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-600 leading-relaxed">
-          BriefCraft génère des briefs éditoriaux SEO complets, structurés et actionnables.
+          Breefy génère des briefs éditoriaux SEO complets, structurés et actionnables.
           Plus besoin de passer des heures à analyser la SERP — votre brief est prêt en un clic.
         </p>
 

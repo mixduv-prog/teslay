@@ -3,7 +3,7 @@ import Link from "next/link";
 import { blogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — BriefCraft",
+  title: "Blog — Breefy",
   description:
     "Articles, guides et conseils sur le SEO, les briefs éditoriaux, la stratégie de contenu et l'IA générative.",
 };

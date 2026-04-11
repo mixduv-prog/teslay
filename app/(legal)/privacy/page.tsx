@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — BriefCraft",
-  description: "Politique de confidentialité et protection des données personnelles de BriefCraft.",
+  title: "Politique de confidentialité — Breefy",
+  description: "Politique de confidentialité et protection des données personnelles de Breefy.",
 };
 
 export default function PrivacyPage() {
@@ -13,20 +13,20 @@ export default function PrivacyPage() {
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">1. Introduction</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft accorde une grande importance à la protection de vos données personnelles. La
+        Breefy accorde une grande importance à la protection de vos données personnelles. La
         présente politique explique quelles données nous collectons, comment nous les utilisons et
         quels sont vos droits, conformément au Règlement Général sur la Protection des Données (RGPD).
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">2. Responsable du traitement</h2>
       <p className="text-neutral-700 leading-relaxed">
-        Le responsable du traitement est BriefCraft. Pour toute question relative au traitement de
-        vos données, contactez-nous à : <strong>privacy@briefcraft.app</strong>
+        Le responsable du traitement est Breefy. Pour toute question relative au traitement de
+        vos données, contactez-nous à : <strong>privacy@getbreefy.com</strong>
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">3. Données collectées</h2>
       <p className="text-neutral-700 leading-relaxed">
-        Nous collectons les données suivantes lorsque vous utilisez BriefCraft :
+        Nous collectons les données suivantes lorsque vous utilisez Breefy :
       </p>
       <ul className="text-neutral-700 leading-relaxed list-disc pl-6 mt-4">
         <li><strong>Données de compte</strong> : nom, adresse email, photo de profil (via Google OAuth)</li>
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">4. Finalités du traitement</h2>
       <p className="text-neutral-700 leading-relaxed">Vos données sont utilisées pour :</p>
       <ul className="text-neutral-700 leading-relaxed list-disc pl-6 mt-4">
-        <li>Fournir et améliorer le service BriefCraft</li>
+        <li>Fournir et améliorer le service Breefy</li>
         <li>Gérer votre compte et vos abonnements</li>
         <li>Vous envoyer des emails transactionnels (bienvenue, confirmation de paiement)</li>
         <li>Prévenir les abus et sécuriser la plateforme</li>
@@ -84,12 +84,12 @@ export default function PrivacyPage() {
         <li>Droit d&apos;introduire une réclamation auprès de la CNIL</li>
       </ul>
       <p className="text-neutral-700 leading-relaxed mt-4">
-        Pour exercer ces droits, contactez-nous à : <strong>privacy@briefcraft.app</strong>
+        Pour exercer ces droits, contactez-nous à : <strong>privacy@getbreefy.com</strong>
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">9. Cookies</h2>
       <p className="text-neutral-700 leading-relaxed">
-        BriefCraft utilise uniquement des cookies strictement nécessaires au fonctionnement du
+        Breefy utilise uniquement des cookies strictement nécessaires au fonctionnement du
         service (session d&apos;authentification). Aucun cookie publicitaire ou de tracking
         tiers n&apos;est utilisé sans votre consentement explicite.
       </p>

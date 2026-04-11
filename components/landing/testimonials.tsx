@@ -1,7 +1,7 @@
 const testimonials = [
   {
     quote:
-      "BriefCraft a divisé par 10 le temps que je passais à préparer mes briefs. Mes rédacteurs adorent la structure, et mes articles se positionnent mieux sur Google.",
+      "Breefy a divisé par 10 le temps que je passais à préparer mes briefs. Mes rédacteurs adorent la structure, et mes articles se positionnent mieux sur Google.",
     name: "Sophie L.",
     role: "Head of Content, SaaS B2B",
     initials: "SL",
@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     quote:
-      "J'ai testé tous les outils de brief SEO du marché. BriefCraft est le seul qui produit des briefs qu'on peut utiliser tels quels, sans retouche. Le rapport qualité-prix est imbattable.",
+      "J'ai testé tous les outils de brief SEO du marché. Breefy est le seul qui produit des briefs qu'on peut utiliser tels quels, sans retouche. Le rapport qualité-prix est imbattable.",
     name: "Julie D.",
     role: "Content Manager, e-commerce",
     initials: "JD",
@@ -31,7 +31,7 @@ export function Testimonials() {
             Ils gagnent des heures chaque semaine
           </h2>
           <p className="mt-4 text-lg text-neutral-500">
-            Rejoignez les équipes SEO qui ont fait de BriefCraft leur outil indispensable.
+            Rejoignez les équipes SEO qui ont fait de Breefy leur outil indispensable.
           </p>
         </div>
         <div className="mt-16 grid gap-8 lg:grid-cols-3">

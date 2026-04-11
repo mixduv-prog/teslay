@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — BriefCraft",
-  description: "Mentions légales de BriefCraft.",
+  title: "Mentions légales — Breefy",
+  description: "Mentions légales de Breefy.",
 };
 
 export default function LegalPage() {
@@ -13,16 +13,16 @@ export default function LegalPage() {
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">Éditeur du site</h2>
       <p className="text-neutral-700 leading-relaxed">
-        <strong>BriefCraft</strong>
+        <strong>Breefy</strong>
         <br />
         Générateur de briefs SEO par intelligence artificielle
         <br />
-        Email : contact@briefcraft.app
+        Email : contact@getbreefy.com
       </p>
 
       <h2 className="font-serif text-2xl text-neutral-900 mt-10 mb-4">Hébergement</h2>
       <p className="text-neutral-700 leading-relaxed">
-        Le site BriefCraft est hébergé par :
+        Le site Breefy est hébergé par :
         <br />
         <strong>Vercel Inc.</strong>
         <br />
@@ -43,7 +43,7 @@ export default function LegalPage() {
       <p className="text-neutral-700 leading-relaxed">
         Pour toute question ou réclamation, vous pouvez nous contacter à l&apos;adresse suivante :
         <br />
-        <strong>contact@briefcraft.app</strong>
+        <strong>contact@getbreefy.com</strong>
       </p>
     </>
   );
