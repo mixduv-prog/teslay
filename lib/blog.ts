@@ -220,6 +220,276 @@ Breefy génère cette checklist automatiquement à la fin de chaque brief, adapt
 
 Une checklist SEO rigoureuse, c'est la différence entre un article qui performe et un article qui stagne en page 3. Prenez 10 minutes avant chaque publication pour tout vérifier : c'est le meilleur investissement en SEO.`,
   },
+  {
+    slug: "longue-traine-seo-strategie",
+    title: "La stratégie longue traîne : capter du trafic qualifié sans budget",
+    excerpt:
+      "Comment la longue traîne peut vous ramener plus de trafic qualifié que n'importe quelle autre stratégie SEO.",
+    date: "2026-03-22",
+    readTime: "9 min",
+    content: `## Qu'est-ce que la longue traîne ?
+
+En SEO, la longue traîne désigne les requêtes de recherche spécifiques, souvent composées de 4 mots ou plus, avec un volume de recherche individuel faible mais une intention très précise.
+
+La longue traîne représente 70% des recherches Google. Et pourtant, la plupart des entreprises l'ignorent et s'épuisent à attaquer quelques mots-clés génériques ultra-compétitifs.
+
+## Pourquoi la longue traîne gagne
+
+### 1. Moins de concurrence
+Les gros sites ciblent les mots-clés à fort volume. Vous pouvez vous positionner en page 1 sur une longue traîne en 2 semaines, là où il faudrait 2 ans pour une requête générique.
+
+### 2. Taux de conversion supérieur
+Plus la requête est précise, plus l'intention est claire. "Acheter chaussures running" convertit 10x mieux que "chaussures".
+
+### 3. Effet cumulatif
+50 articles longue traîne génèrent plus de trafic qu'un seul article générique. Et ce trafic est stable, car personne ne cherche à vous le voler.
+
+## Comment trouver des mots-clés longue traîne
+
+1. Google Suggest : tapez votre mot-clé + espace
+2. People Also Ask : les questions liées
+3. Forums (Reddit, Quora) : les vraies questions des gens
+4. Outils : Semrush, Ahrefs, Google Search Console
+5. Avis clients : comment ils décrivent leurs problèmes
+
+## Structurer votre contenu longue traîne
+
+Chaque article doit :
+- Répondre précisément à UNE question
+- Contenir la requête exacte dans le H1 et le premier paragraphe
+- Être assez long (800-1500 mots suffisent)
+- Inclure des questions PAA connexes
+
+C'est là que Breefy excelle : un brief longue traîne ultra-ciblé en 30 secondes. Scalez à 50 articles sans y passer des mois.
+
+## Conclusion
+
+La longue traîne est le levier le plus puissant pour les sites qui démarrent. Avec 50 articles bien ciblés, vous construisez une moat SEO que personne ne peut vous prendre.`,
+  },
+  {
+    slug: "e-e-a-t-google-2026",
+    title: "E-E-A-T : comment Google évalue votre contenu en 2026",
+    excerpt:
+      "Experience, Expertise, Authoritativeness, Trustworthiness — les 4 piliers que Google utilise pour classer votre contenu.",
+    date: "2026-03-18",
+    readTime: "7 min",
+    content: `## L'évolution de E-A-T à E-E-A-T
+
+En décembre 2022, Google a ajouté un "E" à son célèbre E-A-T. Ce nouveau E signifie "Experience" — l'expérience vécue. Google veut savoir si vous avez réellement utilisé le produit, visité le lieu, testé la méthode.
+
+En 2026, E-E-A-T est le critère numéro 1 pour évaluer la qualité d'un contenu, en particulier sur les sujets YMYL (Your Money Your Life).
+
+## Les 4 piliers
+
+### 1. Experience
+Avez-vous personnellement vécu ce dont vous parlez ? Un test de chaussures par quelqu'un qui les a portées 6 mois vaut mille fois mieux qu'un résumé technique.
+
+### 2. Expertise
+Avez-vous les connaissances nécessaires ? Diplômes, certifications, années d'expérience pro.
+
+### 3. Authoritativeness
+Êtes-vous reconnu comme source fiable ? Mentions sur d'autres sites, backlinks, citations.
+
+### 4. Trustworthiness
+Votre site est-il fiable ? HTTPS, mentions légales, contact, informations à jour, transparence des sources.
+
+## Comment appliquer E-E-A-T
+
+### Créez des auteurs visibles
+Chaque article doit avoir un nom d'auteur avec bio détaillée.
+
+### Montrez votre expérience
+Photos prises par vous, captures d'écran, anecdotes vécues.
+
+### Citez vos sources
+Liens vers études et experts reconnus.
+
+### Mettez à jour
+Révisez vos articles tous les 6 mois.
+
+## E-E-A-T et briefs SEO
+
+Un bon brief doit explicitement demander : exemples concrets, sources autoritaires, bio d'auteur, date de mise à jour. Breefy intègre E-E-A-T par défaut, particulièrement pour les sujets YMYL.
+
+## Conclusion
+
+En 2026, E-E-A-T n'est plus une option. C'est la base. Un contenu sans expérience, expertise, autorité et fiabilité ne se positionne plus.`,
+  },
+  {
+    slug: "search-intent-guide",
+    title: "Intention de recherche : comment l'identifier et l'exploiter",
+    excerpt:
+      "L'intention de recherche est le critère qui fait la différence entre un article qui convertit et un article qui déçoit.",
+    date: "2026-03-14",
+    readTime: "8 min",
+    content: `## Qu'est-ce que l'intention de recherche ?
+
+L'intention de recherche désigne ce que l'utilisateur cherche VRAIMENT quand il tape une requête. Elle se décompose en 4 familles :
+
+1. **Informationnelle** : "comment faire du pain"
+2. **Navigationnelle** : "facebook login"
+3. **Transactionnelle** : "acheter iPhone 15"
+4. **Investigation commerciale** : "meilleur CRM B2B"
+
+Google est devenu expert pour identifier l'intention. Si vous ne répondez pas exactement à cette intention, votre article ne se positionnera pas.
+
+## Comment identifier l'intention
+
+### Méthode 1 : Analyser la SERP
+Regardez les 10 premiers résultats Google :
+- Articles de blog → informationnel
+- Pages produit → transactionnel
+- Comparatifs → investigation commerciale
+- Sites officiels → navigationnel
+
+### Méthode 2 : Les SERP Features
+- Featured snippet → informationnel
+- Shopping ads → transactionnel
+- Local pack → local
+- People Also Ask → informationnel approfondi
+
+### Méthode 3 : Les modificateurs
+- "comment", "pourquoi" → informationnel
+- "acheter", "prix" → transactionnel
+- "meilleur", "vs" → investigation commerciale
+
+## Adapter votre contenu
+
+### Pour l'informationnel
+Article de blog long (1500+ mots), structure H1-H2-H3, réponse immédiate en début, FAQ en bas.
+
+### Pour le transactionnel
+Page produit concise, bénéfices, photos HD, CTA multiples, avis clients.
+
+### Pour l'investigation commerciale
+Comparatif structuré, tableau, pros/cons, recommandation claire, CTA vers essai gratuit.
+
+## Brief SEO et intention
+
+Breefy identifie automatiquement l'intention et génère un brief adapté : structure, longueur, angle, CTA. Vous choisissez l'intention, l'IA fait le reste.
+
+## Conclusion
+
+L'intention de recherche, c'est LE critère qui différencie un article qui performe d'un article qui déçoit. Prenez 30 secondes pour la valider à chaque brief.`,
+  },
+  {
+    slug: "pillar-page-topic-cluster",
+    title: "Pillar page et topic clusters : dominer une thématique",
+    excerpt:
+      "Comment structurer votre contenu en pillar pages et articles satellites pour dominer votre niche SEO.",
+    date: "2026-03-10",
+    readTime: "10 min",
+    content: `## Le problème du contenu isolé
+
+La plupart des blogs publient des articles isolés, sans liens entre eux. Google ne comprend pas votre expertise, votre topical authority reste faible.
+
+La solution : le modèle **pillar page + topic cluster**.
+
+## Qu'est-ce qu'une pillar page ?
+
+Une pillar page est un contenu long et exhaustif qui couvre TOUS les aspects d'un sujet large. Exemple : "Stratégie de contenu : le guide complet 2026" (5000+ mots).
+
+Elle résume chaque sous-sujet et pointe vers des articles satellites qui approfondissent.
+
+## Qu'est-ce qu'un topic cluster ?
+
+Un ensemble d'articles qui traitent chacun un sous-sujet en profondeur. Chaque satellite pointe vers la pillar page, et vice-versa.
+
+Exemple autour de "Stratégie de contenu" :
+- Pillar : Guide complet
+- Satellite 1 : Calendrier éditorial
+- Satellite 2 : Brief SEO
+- Satellite 3 : KPIs content marketing
+- Satellite 4 : Audit de contenu
+
+## Pourquoi ça marche
+
+1. **Topical authority** : Google comprend votre expertise
+2. **Maillage interne puissant** : l'autorité circule dans le cluster
+3. **Couverture exhaustive** : aucune requête longue traîne n'échappe
+4. **UX** : les lecteurs restent plus longtemps sur votre site
+
+## Comment construire un topic cluster
+
+1. Choisissez un sujet large stratégique
+2. Brainstorm des sous-sujets (20+)
+3. Regroupez par thématique
+4. Rédigez la pillar page (5000+ mots)
+5. Rédigez les satellites (1500-2500 mots)
+6. Maillez pillar ↔ satellites
+7. Publiez 1-2 satellites par semaine
+
+## Brief SEO pour pillar page
+
+Breefy propose un template "Guide complet" spécifiquement pour les pillar pages. Utilisez-le pour démarrer votre cluster en 30 secondes.
+
+## Conclusion
+
+Les topic clusters sont la stratégie SEO la plus puissante pour construire une autorité durable. Plus de travail qu'un article isolé, mais 100x plus efficace sur le long terme.`,
+  },
+  {
+    slug: "meta-title-description-optimization",
+    title: "Meta title et description : les secrets pour exploser votre CTR",
+    excerpt:
+      "Comment écrire des meta tags qui attirent les clics et améliorent votre positionnement Google.",
+    date: "2026-03-06",
+    readTime: "6 min",
+    content: `## Pourquoi les meta tags sont cruciaux
+
+Le meta title et la meta description sont la première chose que Google montre de votre page. Si cet ensemble n'est pas attirant, personne ne clique, et votre article rate son potentiel.
+
+Le CTR est un signal fort pour Google : plus il est élevé, plus votre page monte.
+
+## Les règles du meta title
+
+### 1. Longueur : 50-60 caractères
+Au-delà, Google tronque avec "...".
+
+### 2. Mot-clé en début
+Dans les 30 premiers caractères.
+
+### 3. Année si pertinent
+"2026", "cette année" — les gens cliquent plus sur du frais.
+
+### 4. Promesse de valeur
+Power words : "complet", "guide", "meilleur", "gratuit", "étape par étape".
+
+### 5. Nombre
+Les titres avec chiffres performent mieux : "7 erreurs", "15 astuces".
+
+## Les règles de la meta description
+
+### 1. Longueur : 140-155 caractères
+
+### 2. Reprendre le mot-clé
+Il apparaîtra en gras dans Google.
+
+### 3. Bénéfice clair
+"Découvrez comment X en 5 minutes" > "Article sur X"
+
+### 4. CTA implicite
+"Découvrez", "Apprenez", "Téléchargez".
+
+## Exemples avant/après
+
+### Mauvais
+- Title : "Comment faire du pain maison"
+- Description : "Article sur comment faire du pain"
+
+### Bon
+- Title : "Recette pain maison : guide complet 2026 (sans machine)"
+- Description : "Découvrez comment faire un pain maison croustillant en 1h, sans machine. Recette testée, photos et astuces du boulanger."
+
+**Impact** : +40% de CTR en moyenne.
+
+## Automatiser avec Breefy
+
+Breefy génère automatiquement meta title et description optimisés pour chaque brief. Longueurs respectées, mots-clés intégrés, power words utilisés.
+
+## Conclusion
+
+Les meta tags sont souvent bâclés. C'est une opportunité énorme : soignez-les, et vous dépasserez des concurrents mieux positionnés, juste grâce à un meilleur CTR.`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
