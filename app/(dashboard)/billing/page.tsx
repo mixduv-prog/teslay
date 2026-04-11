@@ -40,6 +40,7 @@ export default function BillingPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [loading, setLoading] = useState<string | null>(null);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -49,6 +50,7 @@ export default function BillingPage() {
 
   const handleSubscribe = async (planId: string) => {
     setLoading(planId);
+    setError("");
     try {
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
@@ -56,10 +58,16 @@ export default function BillingPage() {
         body: JSON.stringify({ plan: planId }),
       });
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Erreur inconnue");
+      }
       if (data.url) {
         window.location.href = data.url;
+      } else {
+        throw new Error("Aucune URL de checkout reçue");
       }
-    } catch {
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue");
       setLoading(null);
     }
   };
@@ -82,6 +90,12 @@ export default function BillingPage() {
           Gérez votre abonnement et vos moyens de paiement.
         </p>
       </div>
+
+      {error && (
+        <div className="mb-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          {error}
+        </div>
+      )}
 
       <div className="grid gap-6 lg:grid-cols-3">
         {plans.map((plan) => {
