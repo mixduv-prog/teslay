@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { BriefCard } from "@/components/dashboard/brief-card";
 import { CreditsDisplay } from "@/components/dashboard/credits-display";
+import { Onboarding } from "@/components/dashboard/onboarding";
 
 interface Brief {
   id: string;
@@ -67,6 +68,8 @@ export default function DashboardPage() {
 
   return (
     <div>
+      {briefs.length === 0 && <Onboarding userName={session?.user?.name || undefined} />}
+
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-serif text-2xl text-neutral-900">

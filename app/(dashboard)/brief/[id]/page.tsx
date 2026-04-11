@@ -104,7 +104,7 @@ export default function BriefPage() {
           </div>
         </div>
       </div>
-      <BriefOutput content={brief.output} keyword={brief.keyword} />
+      <BriefOutput id={brief.id} content={brief.output} keyword={brief.keyword} />
     </div>
   );
 }

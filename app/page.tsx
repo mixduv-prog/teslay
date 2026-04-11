@@ -2,7 +2,9 @@ import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { Stats } from "@/components/landing/stats";
 import { Features } from "@/components/landing/features";
+import { HowItWorks } from "@/components/landing/how-it-works";
 import { Demo } from "@/components/landing/demo";
+import { UseCasesGrid } from "@/components/landing/use-cases-grid";
 import { Testimonials } from "@/components/landing/testimonials";
 import { Pricing } from "@/components/landing/pricing";
 import { FAQ } from "@/components/landing/faq";
@@ -15,7 +17,9 @@ export default function Home() {
       <Hero />
       <Stats />
       <Features />
+      <HowItWorks />
       <Demo />
+      <UseCasesGrid />
       <Testimonials />
       <Pricing />
       <FAQ />

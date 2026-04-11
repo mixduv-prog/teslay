@@ -11,15 +11,21 @@ export function Navbar() {
           </div>
           <span className="font-serif text-lg text-neutral-900">Breefy</span>
         </Link>
-        <nav className="hidden items-center gap-8 text-sm text-neutral-600 md:flex">
-          <Link href="#features" className="hover:text-neutral-900 transition-colors">
-            Fonctionnalités
+        <nav className="hidden items-center gap-7 text-sm text-neutral-600 md:flex">
+          <Link href="/#how-it-works" className="hover:text-neutral-900 transition-colors">
+            Comment ça marche
           </Link>
-          <Link href="#pricing" className="hover:text-neutral-900 transition-colors">
+          <Link href="/#use-cases" className="hover:text-neutral-900 transition-colors">
+            Cas d&apos;usage
+          </Link>
+          <Link href="/exemples" className="hover:text-neutral-900 transition-colors">
+            Exemples
+          </Link>
+          <Link href="/blog" className="hover:text-neutral-900 transition-colors">
+            Blog
+          </Link>
+          <Link href="/#pricing" className="hover:text-neutral-900 transition-colors">
             Tarifs
-          </Link>
-          <Link href="#faq" className="hover:text-neutral-900 transition-colors">
-            FAQ
           </Link>
         </nav>
         <div className="flex items-center gap-3">
