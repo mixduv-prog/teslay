@@ -1,6 +1,5 @@
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { prisma } from "./prisma";
 
 const providers: NextAuthOptions["providers"] = [];
 
@@ -21,66 +20,50 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async signIn({ user }) {
-      if (!user.email) return false;
-
-      try {
-        const existingUser = await prisma.user.findUnique({
-          where: { email: user.email },
-        });
-
-        if (!existingUser) {
-          const newUser = await prisma.user.create({
-            data: {
-              email: user.email,
-              name: user.name || null,
-              image: user.image || null,
-              emailVerified: new Date(),
-            },
-          });
-          user.id = newUser.id;
-        } else {
-          user.id = existingUser.id;
-          if (
-            existingUser.name !== user.name ||
-            existingUser.image !== user.image
-          ) {
-            await prisma.user.update({
-              where: { id: existingUser.id },
-              data: {
-                name: user.name || existingUser.name,
-                image: user.image || existingUser.image,
-              },
-            });
-          }
-        }
-      } catch (error) {
-        console.error("[auth] signIn DB error:", error);
-      }
-
-      return true;
-    },
-    async jwt({ token, user }) {
-      if (user) {
-        token.sub = user.id;
-        token.email = user.email;
+    async jwt({ token, account, profile }) {
+      // On first sign-in, store Google sub as our user identifier
+      if (account && profile) {
+        token.googleId = (profile as { sub?: string }).sub;
+        token.email = profile.email;
+        token.name = profile.name;
+        token.picture = (profile as { picture?: string }).picture;
       }
       return token;
     },
     async session({ session, token }) {
-      if (session.user && token.sub) {
-        session.user.id = token.sub;
+      if (session.user) {
+        session.user.id = (token.sub || token.googleId) as string;
+        session.user.email = (token.email as string) || session.user.email;
+        session.user.name = (token.name as string) || session.user.name;
+        session.user.image = (token.picture as string) || session.user.image;
+
+        // Try to load user data from DB, but don't fail auth if DB is down
         try {
-          const dbUser = await prisma.user.findUnique({
-            where: { id: token.sub },
-            select: { plan: true, credits: true },
-          });
-          if (dbUser) {
+          const { prisma } = await import("./prisma");
+          if (session.user.email) {
+            const dbUser = await prisma.user.upsert({
+              where: { email: session.user.email },
+              update: {
+                name: session.user.name || null,
+                image: session.user.image || null,
+              },
+              create: {
+                email: session.user.email,
+                name: session.user.name || null,
+                image: session.user.image || null,
+                emailVerified: new Date(),
+              },
+              select: { id: true, plan: true, credits: true },
+            });
+            session.user.id = dbUser.id;
             session.user.plan = dbUser.plan;
             session.user.credits = dbUser.credits;
           }
-        } catch {
-          // DB not available
+        } catch (error) {
+          console.error("[auth] session DB error:", error);
+          // Fallback: use Google ID, set default plan
+          session.user.plan = "FREE";
+          session.user.credits = 3;
         }
       }
       return session;
