@@ -3,18 +3,31 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
+async function getUserId(email: string): Promise<string> {
+  const user = await prisma.user.upsert({
+    where: { email },
+    update: {},
+    create: {
+      email,
+      emailVerified: new Date(),
+    },
+  });
+  return user.id;
+}
+
 export async function GET(req: NextRequest) {
   const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
+  if (!session?.user?.email) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   }
 
+  const userId = await getUserId(session.user.email);
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
 
   if (id) {
     const brief = await prisma.brief.findFirst({
-      where: { id, userId: session.user.id },
+      where: { id, userId },
     });
     if (!brief) {
       return NextResponse.json({ error: "Brief introuvable" }, { status: 404 });
@@ -23,7 +36,7 @@ export async function GET(req: NextRequest) {
   }
 
   const briefs = await prisma.brief.findMany({
-    where: { userId: session.user.id },
+    where: { userId },
     orderBy: { createdAt: "desc" },
     select: {
       id: true,
@@ -39,10 +52,11 @@ export async function GET(req: NextRequest) {
 
 export async function DELETE(req: NextRequest) {
   const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
+  if (!session?.user?.email) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   }
 
+  const userId = await getUserId(session.user.email);
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
 
@@ -51,7 +65,7 @@ export async function DELETE(req: NextRequest) {
   }
 
   const brief = await prisma.brief.findFirst({
-    where: { id, userId: session.user.id },
+    where: { id, userId },
   });
 
   if (!brief) {

@@ -19,12 +19,25 @@ const generateSchema = z.object({
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
+  if (!session?.user?.id || !session.user.email) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   }
 
+  // Ensure user exists in DB (idempotent upsert)
+  const dbUser = await prisma.user.upsert({
+    where: { email: session.user.email },
+    update: {},
+    create: {
+      email: session.user.email,
+      name: session.user.name || null,
+      image: session.user.image || null,
+      emailVerified: new Date(),
+    },
+  });
+  const userId = dbUser.id;
+
   // Rate limit: max 10 briefs per minute per user
-  const rl = rateLimit(`generate:${session.user.id}`, {
+  const rl = rateLimit(`generate:${userId}`, {
     limit: 10,
     windowMs: 60 * 1000,
   });
@@ -35,7 +48,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const allowed = await canGenerate(session.user.id);
+  const allowed = await canGenerate(userId);
   if (!allowed) {
     return NextResponse.json(
       { error: "Vous avez atteint votre limite de briefs. Passez à un plan supérieur." },
@@ -73,7 +86,7 @@ export async function POST(req: NextRequest) {
 
     const brief = await prisma.brief.create({
       data: {
-        userId: session.user.id,
+        userId: userId,
         keyword,
         language: language || "Français",
         tone: tone || "Professionnel",
@@ -85,13 +98,16 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    await consumeCredit(session.user.id);
+    await consumeCredit(userId);
 
     return NextResponse.json(brief);
   } catch (error) {
-    console.error("Generation error:", error);
+    console.error("[api/generate] error:", error);
+    const message = error instanceof Error ? error.message : "Erreur inconnue";
     return NextResponse.json(
-      { error: "Erreur lors de la génération du brief. Réessayez dans quelques instants." },
+      {
+        error: `Erreur lors de la génération : ${message}`,
+      },
       { status: 500 }
     );
   }
