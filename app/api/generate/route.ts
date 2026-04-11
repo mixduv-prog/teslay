@@ -7,6 +7,9 @@ import { generateBrief } from "@/lib/anthropic";
 import { canGenerate, consumeCredit } from "@/lib/usage";
 import { rateLimit } from "@/lib/rate-limit";
 
+// Allow up to 60s for Claude generation (Vercel hobby plan max)
+export const maxDuration = 60;
+
 const generateSchema = z.object({
   keyword: z.string().min(2).max(200),
   language: z.string().max(50).optional(),
