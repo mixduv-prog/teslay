@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { BriefCard } from "@/components/dashboard/brief-card";
 import { CreditsDisplay } from "@/components/dashboard/credits-display";
 
@@ -21,6 +22,7 @@ export default function DashboardPage() {
   const router = useRouter();
   const [briefs, setBriefs] = useState<Brief[]>([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -39,6 +41,21 @@ export default function DashboardPage() {
         .catch(() => setLoading(false));
     }
   }, [status]);
+
+  const filteredBriefs = useMemo(() => {
+    if (!search) return briefs;
+    const q = search.toLowerCase();
+    return briefs.filter(
+      (b) =>
+        b.keyword.toLowerCase().includes(q) ||
+        b.language.toLowerCase().includes(q) ||
+        b.intent.toLowerCase().includes(q)
+    );
+  }, [briefs, search]);
+
+  const handleDelete = (id: string) => {
+    setBriefs((prev) => prev.filter((b) => b.id !== id));
+  };
 
   if (status === "loading" || loading) {
     return (
@@ -87,18 +104,36 @@ export default function DashboardPage() {
           </div>
         </div>
       ) : (
-        <div className="mt-8 space-y-3">
-          {briefs.map((brief) => (
-            <BriefCard
-              key={brief.id}
-              id={brief.id}
-              keyword={brief.keyword}
-              language={brief.language}
-              intent={brief.intent}
-              createdAt={brief.createdAt}
+        <>
+          <div className="mt-8 mb-4">
+            <Input
+              id="search"
+              type="search"
+              placeholder="Rechercher par mot-clé, langue ou intention..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
-          ))}
-        </div>
+          </div>
+          {filteredBriefs.length === 0 ? (
+            <div className="py-12 text-center text-sm text-neutral-500">
+              Aucun brief ne correspond à votre recherche.
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {filteredBriefs.map((brief) => (
+                <BriefCard
+                  key={brief.id}
+                  id={brief.id}
+                  keyword={brief.keyword}
+                  language={brief.language}
+                  intent={brief.intent}
+                  createdAt={brief.createdAt}
+                  onDelete={handleDelete}
+                />
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   );

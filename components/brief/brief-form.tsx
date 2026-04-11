@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Select } from "../ui/select";
+import { templates, getTemplateById } from "@/lib/templates";
 
 const languages = [
   { value: "Français", label: "Français" },
@@ -35,6 +36,25 @@ export function BriefForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [selectedTemplate, setSelectedTemplate] = useState<string>("");
+  const [formValues, setFormValues] = useState({
+    intent: "Informationnel",
+    tone: "Professionnel",
+    wordCount: 1500,
+    notes: "",
+  });
+
+  const handleTemplateClick = (id: string) => {
+    const template = getTemplateById(id);
+    if (!template) return;
+    setSelectedTemplate(id);
+    setFormValues({
+      intent: template.intent,
+      tone: template.tone,
+      wordCount: template.wordCount,
+      notes: template.notesTemplate,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -81,6 +101,31 @@ export function BriefForm() {
         </div>
       )}
 
+      <div>
+        <label className="block text-sm font-medium text-neutral-700 mb-2">
+          Template (optionnel)
+        </label>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {templates.map((template) => (
+            <button
+              key={template.id}
+              type="button"
+              onClick={() => handleTemplateClick(template.id)}
+              className={`rounded-lg border px-3 py-2.5 text-left text-sm transition-colors ${
+                selectedTemplate === template.id
+                  ? "border-green-500 bg-green-50 text-green-700"
+                  : "border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300"
+              }`}
+            >
+              <div className="font-medium">{template.name}</div>
+              <div className="mt-0.5 text-xs text-neutral-500 line-clamp-1">
+                {template.description}
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <Input
         id="keyword"
         name="keyword"
@@ -90,17 +135,14 @@ export function BriefForm() {
       />
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Select
-          id="language"
-          name="language"
-          label="Langue"
-          options={languages}
-        />
+        <Select id="language" name="language" label="Langue" options={languages} />
         <Select
           id="tone"
           name="tone"
           label="Ton"
           options={tones}
+          value={formValues.tone}
+          onChange={(e) => setFormValues({ ...formValues, tone: e.target.value })}
         />
       </div>
 
@@ -110,13 +152,18 @@ export function BriefForm() {
           name="intent"
           label="Intention de recherche"
           options={intents}
+          value={formValues.intent}
+          onChange={(e) => setFormValues({ ...formValues, intent: e.target.value })}
         />
         <Input
           id="wordCount"
           name="wordCount"
           label="Nombre de mots cible"
           type="number"
-          defaultValue={1500}
+          value={formValues.wordCount}
+          onChange={(e) =>
+            setFormValues({ ...formValues, wordCount: Number(e.target.value) })
+          }
           min={500}
           max={5000}
           step={100}
@@ -135,7 +182,9 @@ export function BriefForm() {
         name="notes"
         label="Notes additionnelles (optionnel)"
         placeholder="Contexte, angle spécifique, points à couvrir..."
-        rows={3}
+        rows={4}
+        value={formValues.notes}
+        onChange={(e) => setFormValues({ ...formValues, notes: e.target.value })}
       />
 
       <Button type="submit" size="lg" loading={loading} className="w-full">
