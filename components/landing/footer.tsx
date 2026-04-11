@@ -31,34 +31,39 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#faq" className="text-neutral-500 hover:text-neutral-900 transition-colors">
-                  FAQ
+                <Link href="/exemples" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  Exemples
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-neutral-500 hover:text-neutral-900 transition-colors">
-                  Blog
+                <Link href="/changelog" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  Changelog
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-neutral-900">Compte</h3>
+            <h3 className="text-sm font-semibold text-neutral-900">Ressources</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="/login" className="text-neutral-500 hover:text-neutral-900 transition-colors">
-                  Connexion
+                <Link href="/blog" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/register" className="text-neutral-500 hover:text-neutral-900 transition-colors">
-                  Inscription
+                <Link href="/#use-cases" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  Cas d&apos;usage
                 </Link>
               </li>
               <li>
-                <Link href="/dashboard" className="text-neutral-500 hover:text-neutral-900 transition-colors">
-                  Dashboard
+                <Link href="/vs/semrush" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  vs Semrush
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
