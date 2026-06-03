@@ -34,6 +34,7 @@ export async function GET(req: NextRequest) {
     priceMin: num("priceMin"),
     priceMax: num("priceMax"),
     rangeMin: num("rangeMin"),
+    trunkMin: num("trunkMin"),
     only800V: searchParams.get("only800V") === "true",
   };
 

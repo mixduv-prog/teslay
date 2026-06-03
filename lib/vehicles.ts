@@ -2111,6 +2111,55 @@ export const vehicles: Vehicle[] = [
     flags: { trunkUncertain: true, chargeUnknown: true },
   },
 
+  {
+    id: "tesla-model-s",
+    brand: "Tesla",
+    model: "Model S",
+    version: "Dual Motor — 100 kWh",
+    chemistry: "NMC",
+    capacityKwh: 100,
+    rangeWltpKm: 634,
+    rangeNote: "Plaid : ~600 km, 1 020 ch",
+    trunkL: 793,
+    trunkNote: "+ frunk · 1 645 L rabattu",
+    priceFromEur: 109990,
+    priceNote: "Plaid 119 990 €",
+    charge1080: "non publié (DC 250 kW, Supercharger)",
+    fastChargeMin: null,
+    maxDcKw: 250,
+    connector: "CCS Combo + Supercharger",
+    is800V: false,
+    segment: "Berline",
+    status: "neuf",
+    officialUrl: "https://www.tesla.com/fr_fr/models",
+    sources: "Tesla · tout-sur-lauto",
+    flags: { chargeUnknown: true },
+  },
+  {
+    id: "tesla-model-x",
+    brand: "Tesla",
+    model: "Model X",
+    version: "Dual Motor — 100 kWh · 7 places",
+    chemistry: "NMC",
+    capacityKwh: 100,
+    rangeWltpKm: 649,
+    rangeNote: "Plaid : 609 km, 1 020 ch",
+    trunkL: 1050,
+    trunkNote: "+ frunk · portes Falcon Wing",
+    priceFromEur: 114990,
+    priceNote: "Plaid 124 990 €",
+    charge1080: "non publié (DC 250 kW, Supercharger)",
+    fastChargeMin: null,
+    maxDcKw: 250,
+    connector: "CCS Combo + Supercharger",
+    is800V: false,
+    segment: "SUV 7 places",
+    status: "neuf",
+    officialUrl: "https://www.tesla.com/fr_fr/modelx",
+    sources: "Tesla · voitureautonome",
+    flags: { chargeUnknown: true, trunkUncertain: true },
+  },
+
   // ─────────────── OCCASION (plus commercialisés neufs / fin de série) ───────────────
   {
     id: "renault-zoe",
@@ -2302,6 +2351,7 @@ export interface VehicleFilters {
   priceMin?: number;
   priceMax?: number;
   rangeMin?: number;
+  trunkMin?: number;
   only800V?: boolean;
 }
 
@@ -2319,6 +2369,7 @@ export function filterVehicles(list: Vehicle[], f: VehicleFilters): Vehicle[] {
     if (typeof f.priceMin === "number" && (v.priceFromEur ?? Infinity) < f.priceMin) return false;
     if (typeof f.priceMax === "number" && (v.priceFromEur ?? -Infinity) > f.priceMax) return false;
     if (typeof f.rangeMin === "number" && v.rangeWltpKm < f.rangeMin) return false;
+    if (typeof f.trunkMin === "number" && (v.trunkL ?? 0) < f.trunkMin) return false;
     return true;
   });
 }

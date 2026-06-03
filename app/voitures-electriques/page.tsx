@@ -1,5 +1,6 @@
 import { vehicles, brands } from "@/lib/vehicles";
 import { VeExplorer } from "@/components/ve/ve-explorer";
+import { BatteryGuide } from "@/components/ve/battery-guide";
 
 export default function VoituresElectriquesPage() {
   const neuf = vehicles.filter((v) => v.status === "neuf").length;
@@ -10,10 +11,10 @@ export default function VoituresElectriquesPage() {
       <div className="mb-8">
         <h1 className="font-serif text-3xl sm:text-4xl">Comparateur de voitures électriques</h1>
         <p className="mt-2 max-w-2xl text-neutral-600">
-          {vehicles.length} modèles &amp; versions du marché français — filtrez par segment, batterie,
-          marque, prix, autonomie ou charge 800&nbsp;V. Autonomie en cycle WLTP, prix catalogue France.
+          {vehicles.length} modèles &amp; versions du marché français — filtrez par segment,
+          batterie, marque, prix (min/max), autonomie, coffre ou charge 800&nbsp;V.
         </p>
-        <div className="mt-4 flex flex-wrap gap-3 text-sm">
+        <div className="mt-4 flex flex-wrap gap-2.5 text-sm">
           <Stat value={vehicles.length} label="modèles & versions" />
           <Stat value={neuf} label="neufs" />
           {occasion > 0 && <Stat value={occasion} label="occasion" />}
@@ -22,6 +23,10 @@ export default function VoituresElectriquesPage() {
       </div>
 
       <VeExplorer vehicles={vehicles} brands={brands} />
+
+      <div id="batteries" className="scroll-mt-20">
+        <BatteryGuide />
+      </div>
     </>
   );
 }

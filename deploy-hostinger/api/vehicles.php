@@ -39,10 +39,11 @@ $statuses  = listParam('status');
 $priceMin  = isset($_GET['priceMin']) && $_GET['priceMin'] !== '' ? (float) $_GET['priceMin'] : null;
 $priceMax  = isset($_GET['priceMax']) && $_GET['priceMax'] !== '' ? (float) $_GET['priceMax'] : null;
 $rangeMin  = isset($_GET['rangeMin']) && $_GET['rangeMin'] !== '' ? (float) $_GET['rangeMin'] : null;
+$trunkMin  = isset($_GET['trunkMin']) && $_GET['trunkMin'] !== '' ? (float) $_GET['trunkMin'] : null;
 $only800V  = isset($_GET['only800V']) && $_GET['only800V'] === 'true';
 
 $results = array_values(array_filter($vehicles, function ($v) use (
-    $q, $brands, $chems, $segments, $statuses, $priceMin, $priceMax, $rangeMin, $only800V
+    $q, $brands, $chems, $segments, $statuses, $priceMin, $priceMax, $rangeMin, $trunkMin, $only800V
 ) {
     if ($q !== '') {
         $hay = mb_strtolower(($v['brand'] ?? '') . ' ' . ($v['model'] ?? '') . ' ' . ($v['version'] ?? ''));
@@ -58,6 +59,7 @@ $results = array_values(array_filter($vehicles, function ($v) use (
     if ($priceMin !== null && ($price === null || $price < $priceMin)) return false;
     if ($priceMax !== null && ($price === null || $price > $priceMax)) return false;
     if ($rangeMin !== null && ($v['rangeWltpKm'] ?? 0) < $rangeMin)    return false;
+    if ($trunkMin !== null && ($v['trunkL'] ?? 0) < $trunkMin)         return false;
 
     return true;
 }));
