@@ -1,43 +1,44 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXTAUTH_URL || "https://getbreefy.com";
+const siteUrl =
+  process.env.NEXTAUTH_URL || "https://peachpuff-wolverine-278515.hostingersite.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Breefy — Générateur de briefs SEO par IA",
-    template: "%s | Breefy",
+    default: "Voltage — Comparateur de voitures électriques (France 2026)",
+    template: "%s | Voltage",
   },
   description:
-    "Générez des briefs éditoriaux SEO complets, structurés et actionnables en 30 secondes grâce à l'IA Claude. Mots-clés, structure Hn, meta tags, checklist : tout est inclus.",
+    "Comparez les voitures électriques vendues en France : autonomie WLTP, batterie LFP/NMC, charge 10→80 %, coffre, prix et offres. Filtres multiples, neuf & occasion.",
   keywords: [
-    "brief SEO",
-    "générateur brief SEO",
-    "brief éditorial",
-    "SEO",
-    "IA SEO",
-    "Claude",
-    "content marketing",
-    "rédaction SEO",
+    "voiture électrique",
+    "comparateur voiture électrique",
+    "autonomie WLTP",
+    "batterie LFP",
+    "batterie NMC",
+    "recharge rapide",
+    "prix voiture électrique",
+    "véhicule électrique France",
   ],
-  authors: [{ name: "Breefy" }],
-  creator: "Breefy",
-  publisher: "Breefy",
+  authors: [{ name: "Voltage" }],
+  creator: "Voltage",
+  publisher: "Voltage",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: siteUrl,
-    title: "Breefy — Générateur de briefs SEO par IA",
+    title: "Voltage — Comparateur de voitures électriques",
     description:
-      "Des briefs SEO parfaits en 30 secondes. Structure Hn, mots-clés, meta tags et checklist inclus.",
-    siteName: "Breefy",
+      "105 modèles & versions du marché français comparés : autonomie, batterie, recharge, coffre, prix.",
+    siteName: "Voltage",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Breefy — Générateur de briefs SEO par IA",
+    title: "Voltage — Comparateur de voitures électriques",
     description:
-      "Des briefs SEO parfaits en 30 secondes. Structure Hn, mots-clés, meta tags et checklist inclus.",
+      "105 modèles & versions du marché français comparés : autonomie, batterie, recharge, coffre, prix.",
   },
   robots: {
     index: true,
