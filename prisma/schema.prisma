@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -77,31 +77,4 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
-}
-
-model Vehicle {
-  id            String   @id
-  brand         String
-  model         String
-  version       String?  @db.Text
-  chemistry     String
-  capacityKwh   Float?
-  rangeWltpKm   Int
-  rangeNote     String?  @db.Text
-  trunkL        Int?
-  trunkNote     String?  @db.Text
-  priceFromEur  Int?
-  priceNote     String?  @db.Text
-  charge1080    String   @db.Text
-  fastChargeMin Int?
-  maxDcKw       Int?
-  connector     String   @db.Text
-  is800V        Boolean  @default(false)
-  segment       String
-  status        String   @default("neuf")
-  officialUrl   String   @db.Text
-  sources       String   @db.Text
-  flags         Json?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
 }

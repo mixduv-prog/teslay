@@ -1,52 +1,59 @@
-# Déploiement sur Hostinger
+# Déploiement sur Hostinger (Node.js + MySQL)
 
-Deux options selon ton offre.
+## 1) L'app — « Node.js Web App »
 
-## ✅ Option recommandée — « Node.js Web App » (API live incluse)
-
-Si tu vois **« Node.js Web App — Deploy from GitHub »** dans ton panel Hostinger,
-c'est la bonne : le vrai projet Next.js tourne, **avec les API live**
-(`/api/vehicles`, `/api/offers`) et le comparateur sur `/voitures-electriques`.
-
-Réglages :
+Dans hPanel → **Node.js Web App → Deploy from GitHub** :
 
 | Champ | Valeur |
 |---|---|
-| Source | GitHub → dépôt `mixduv-prog/teslay` |
-| Branche | `claude/dazzling-hawking-ozpaI` (ou la branche par défaut après merge de la PR) |
+| Dépôt | `mixduv-prog/teslay` |
+| Branche | `claude/dazzling-hawking-ozpaI` |
 | Version Node | **20 ou 22** |
-| Install command | `npm install` |
-| Build command | `npm run build` |
-| Start command | `npm start` |
-| Port | celui fourni par Hostinger (`next start` lit la variable `PORT`) |
+| Install | `npm install` |
+| Build | `npm run build` |
+| Start | `npm start` |
 
-Variables d'environnement à définir (celles de Breefy — voir `.env.example`) :
-`DATABASE_URL`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL`, `ANTHROPIC_API_KEY`,
-`STRIPE_SECRET_KEY`, etc.
-👉 La page `/voitures-electriques` et ses API **n'ont besoin d'aucune** de ces
-variables ; elles ne servent qu'aux pages Breefy. Mais elles doivent exister
-pour que le build complet passe.
+> Si une build échoue (mémoire/temps), Hostinger garde l'ancienne version en
+> ligne — d'où l'impression que « rien ne change ». Vérifie les **logs de build**
+> et relance un **Redeploy** sur le dernier commit.
 
-Une fois déployé :
-- Comparateur : `https://<ton-domaine>/voitures-electriques`
-- API : `https://<ton-domaine>/api/vehicles` et `/api/offers?vehicleId=tesla-model-3`
+## 2) La base — MySQL Hostinger (sans Prisma, via `mysql2`)
 
-## 🟡 Option de secours — hébergement Web / PHP pur (sans Node)
+1. hPanel → **Bases de données MySQL** : tu as déjà `u167380016_voiture`.
+2. Ouvre **phpMyAdmin** sur cette base et **importe** dans l'ordre :
+   - `deploy-hostinger/schema.sql` (crée la table `vehicles`)
+   - `deploy-hostinger/seed.sql` (insère les 105 véhicules — idempotent)
+3. Dans l'app Node.js, ajoute les **variables d'environnement** :
 
-Si tu n'utilises PAS l'option Node.js, ce dossier fournit une **API JSON live en
-PHP** qui marche sur n'importe quel hébergement mutualisé :
-
-1. Upload de `vehicles.json` et du dossier `api/` dans `public_html`.
-2. Endpoints :
-   - `GET /api/vehicles.php?segment=SUV&priceMax=40000&only800V=true`
-   - `GET /api/offers.php?vehicleId=tesla-model-3`
-
-> ⚠️ Les offres sont **illustratives** (dérivées du prix catalogue), pas un scan
-> en direct. Pour un vrai agrégateur, alimentez `vehicles.json` via une tâche
-> **CRON** Hostinger interrogeant des flux/API partenaires (en respectant
-> robots.txt / CGU / RGPD).
-
-Régénérer `vehicles.json` depuis la base TypeScript :
-```bash
-node --experimental-strip-types scripts/export-vehicles.ts
 ```
+MYSQL_HOST=localhost
+MYSQL_PORT=3306
+MYSQL_USER=<ton utilisateur MySQL Hostinger>
+MYSQL_PASSWORD=<ton mot de passe>
+MYSQL_DATABASE=u167380016_voiture
+ADMIN_PASSWORD=<un mot de passe pour /admin>
+NEXTAUTH_SECRET=<une chaîne aléatoire>
+```
+
+> 🔐 Ne mets **jamais** ces valeurs dans le code/Git — uniquement dans les
+> variables d'environnement de l'app. Si un mot de passe a fuité, **régénère-le**
+> dans hPanel.
+
+4. **Redeploy**. C'est tout.
+
+- Sans ces variables, le site fonctionne quand même (il affiche les 105 modèles
+  **statiques** en lecture seule). Avec, il lit/écrit dans MySQL.
+- **Admin** : `https://<ton-domaine>/admin` (mot de passe = `ADMIN_PASSWORD`) →
+  ajouter / modifier / supprimer des véhicules.
+
+Régénérer les fichiers SQL après une modif du fichier de données :
+```bash
+node --experimental-strip-types scripts/export-sql.ts
+```
+
+## 3) (Option) Hébergement Web pur, sans Node
+
+Si tu n'utilises pas l'app Node.js, le dossier `api/` fournit une **API JSON en
+PHP** (`vehicles.php`, `offers.php`) qui lit `vehicles.json` — à uploader dans
+`public_html`. Pratique en repli, mais l'admin et l'écriture en base ne sont
+disponibles qu'avec la version Node + MySQL ci-dessus.

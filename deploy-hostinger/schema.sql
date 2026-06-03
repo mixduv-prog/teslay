@@ -1,0 +1,25 @@
+-- Table des véhicules (MySQL / MariaDB Hostinger)
+CREATE TABLE IF NOT EXISTS vehicles (
+  id            VARCHAR(191) PRIMARY KEY,
+  brand         VARCHAR(191) NOT NULL,
+  model         VARCHAR(191) NOT NULL,
+  version       TEXT,
+  chemistry     VARCHAR(32)  NOT NULL,
+  capacityKwh   DOUBLE,
+  rangeWltpKm   INT          NOT NULL,
+  rangeNote     TEXT,
+  trunkL        INT,
+  trunkNote     TEXT,
+  priceFromEur  INT,
+  priceNote     TEXT,
+  charge1080    TEXT         NOT NULL,
+  fastChargeMin INT,
+  maxDcKw       INT,
+  connector     VARCHAR(191) NOT NULL,
+  is800V        TINYINT(1)   NOT NULL DEFAULT 0,
+  segment       VARCHAR(64)  NOT NULL,
+  status        VARCHAR(32)  NOT NULL DEFAULT 'neuf',
+  officialUrl   TEXT         NOT NULL,
+  sources       TEXT         NOT NULL,
+  flags         JSON
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
