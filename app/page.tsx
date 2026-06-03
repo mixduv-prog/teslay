@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { vehicles, brands, getVehicle, type Vehicle } from "@/lib/vehicles";
+import { type Vehicle } from "@/lib/vehicles";
+import { getAllVehicles, brandsOf } from "@/lib/vehicle-store";
 import { BatteryGuide } from "@/components/ve/battery-guide";
 
 export const metadata: Metadata = {
@@ -20,12 +21,16 @@ const FEATURED = [
   "tesla-model-3",
 ];
 
-export default function Home() {
+export default async function Home() {
+  const vehicles = await getAllVehicles();
+  const brands = brandsOf(vehicles);
   const neuf = vehicles.filter((v) => v.status === "neuf").length;
   const occasion = vehicles.length - neuf;
   const maxRange = Math.max(...vehicles.map((v) => v.rangeWltpKm));
   const minPrice = Math.min(...vehicles.map((v) => v.priceFromEur ?? Infinity));
-  const featured = FEATURED.map(getVehicle).filter(Boolean) as Vehicle[];
+  const featured = FEATURED.map((id) => vehicles.find((v) => v.id === id)).filter(
+    Boolean,
+  ) as Vehicle[];
 
   return (
     <div className="min-h-screen bg-[#fafaf8] text-[#1a1a1a]">

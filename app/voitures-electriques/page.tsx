@@ -1,8 +1,10 @@
-import { vehicles, brands } from "@/lib/vehicles";
+import { getAllVehicles, brandsOf } from "@/lib/vehicle-store";
 import { VeExplorer } from "@/components/ve/ve-explorer";
 import { BatteryGuide } from "@/components/ve/battery-guide";
 
-export default function VoituresElectriquesPage() {
+export default async function VoituresElectriquesPage() {
+  const vehicles = await getAllVehicles();
+  const brands = brandsOf(vehicles);
   const neuf = vehicles.filter((v) => v.status === "neuf").length;
   const occasion = vehicles.length - neuf;
 

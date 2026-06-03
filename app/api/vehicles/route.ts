@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
-  vehicles,
   filterVehicles,
   type Chemistry,
   type Segment,
   type VehicleStatus,
   type VehicleFilters,
 } from "@/lib/vehicles";
+import { getAllVehicles } from "@/lib/vehicle-store";
 
 // GET /api/vehicles?q=&brand=&chemistry=&segment=&status=&priceMin=&priceMax=&rangeMin=&only800V=
 // Filtrage côté serveur de la base des voitures électriques.
@@ -38,11 +38,12 @@ export async function GET(req: NextRequest) {
     only800V: searchParams.get("only800V") === "true",
   };
 
-  const results = filterVehicles(vehicles, filters);
+  const all = await getAllVehicles();
+  const results = filterVehicles(all, filters);
 
   return NextResponse.json({
     count: results.length,
-    total: vehicles.length,
+    total: all.length,
     collectedAt: "2026-06-03",
     results,
   });

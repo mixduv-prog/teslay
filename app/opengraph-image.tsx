@@ -1,11 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
-export const alt = "Breefy — Générateur de briefs SEO par IA";
-export const size = {
-  width: 1200,
-  height: 630,
-};
+export const alt = "Voltage — Comparateur de voitures électriques";
+export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
@@ -13,90 +9,55 @@ export default async function Image() {
     (
       <div
         style={{
-          fontSize: 48,
-          background: "#fafaf8",
+          background: "#0f172a",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          padding: 80,
+          padding: 90,
+          color: "white",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 20,
-            marginBottom: 40,
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 36 }}>
           <div
             style={{
-              width: 80,
-              height: 80,
-              borderRadius: 18,
-              background: "#22c55e",
+              width: 64,
+              height: 64,
+              borderRadius: 16,
+              background: "linear-gradient(135deg,#34d399,#22d3ee 55%,#6366f1)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "white",
-              fontSize: 56,
-              fontWeight: 700,
-              fontFamily: "serif",
+              fontSize: 40,
             }}
           >
-            B
+            ⚡
           </div>
-          <div
-            style={{
-              fontSize: 56,
-              fontWeight: 500,
-              color: "#1a1a1a",
-              fontFamily: "serif",
-            }}
-          >
-            Breefy
-          </div>
+          <div style={{ fontSize: 44, fontWeight: 600, fontFamily: "serif" }}>Voltage</div>
+        </div>
+        <div style={{ fontSize: 78, fontWeight: 500, lineHeight: 1.05, fontFamily: "serif" }}>
+          Comparateur de
         </div>
         <div
           style={{
-            fontSize: 72,
-            fontWeight: 400,
-            color: "#1a1a1a",
-            textAlign: "center",
-            lineHeight: 1.1,
+            fontSize: 78,
+            fontWeight: 500,
+            lineHeight: 1.05,
             fontFamily: "serif",
-            marginBottom: 20,
+            background: "linear-gradient(100deg,#34d399,#22d3ee 60%,#818cf8)",
+            backgroundClip: "text",
+            color: "transparent",
           }}
         >
-          Des briefs SEO parfaits
+          voitures électriques
         </div>
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: 400,
-            color: "#22c55e",
-            textAlign: "center",
-            lineHeight: 1.1,
-            fontFamily: "serif",
-          }}
-        >
-          en 30 secondes
-        </div>
-        <div
-          style={{
-            marginTop: 50,
-            fontSize: 28,
-            color: "#666",
-            textAlign: "center",
-          }}
-        >
-          Générateur de briefs SEO par IA · getbreefy.com
+        <div style={{ marginTop: 44, fontSize: 30, color: "#94a3b8" }}>
+          105 modèles & versions · autonomie, batterie, prix · France 2026
         </div>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { vehicles, getVehicle } from "@/lib/vehicles";
 import { buildOffers } from "@/lib/offers";
+import { getStaticVehicles, getVehicleById } from "@/lib/vehicle-store";
+
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return vehicles.map((v) => ({ slug: v.id }));
+  return getStaticVehicles().map((v) => ({ slug: v.id }));
 }
 
 export async function generateMetadata({
@@ -14,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const v = getVehicle(slug);
+  const v = await getVehicleById(slug);
   if (!v) return { title: "Modèle introuvable" };
   return {
     title: `${v.brand} ${v.model} — fiche & offres`,
@@ -30,7 +32,7 @@ export default async function VehicleDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const v = getVehicle(slug);
+  const v = await getVehicleById(slug);
   if (!v) notFound();
 
   const offers = buildOffers(v.priceFromEur);
